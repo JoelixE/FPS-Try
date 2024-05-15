@@ -348,7 +348,7 @@ Transform:
   m_GameObject: {fileID: 5775256278217475959}
   serializedVersion: 2
   m_LocalRotation: {x: 9.7144515e-17, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.000000009856974, y: 0.2096278, z: 0.10122935}
+  m_LocalPosition: {x: -0, y: 0.174, z: 0.097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1158,7 +1158,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8474651742996372913, guid: 9ddd7ef570473d8489e83d8f174975c7, type: 3}
+  - {fileID: 2100000, guid: 5e5f327f5e1d4ec4a976ee85940c4d23, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1741,7 +1741,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -7557540490364101082, guid: 9ddd7ef570473d8489e83d8f174975c7, type: 3}
+  - {fileID: 2100000, guid: 0ec721dbdff040e44ac2918e96e5e6e2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2551,6 +2551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9193653512763659608}
   - component: {fileID: 9193653512763659609}
+  - component: {fileID: 9193653512763659610}
   m_Layer: 0
   m_Name: X Bot
   m_TagString: Untagged
@@ -2823,6 +2824,32 @@ MonoBehaviour:
   - {fileID: 862127737340742190}
   - {fileID: 7193063403118396329}
   - {fileID: 8889499521825034747}
+--- !u!143 &9193653512763659610
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421093055791927266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
