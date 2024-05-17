@@ -31,11 +31,12 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField] private AudioSource footstepSource;
     [SerializeField] private AudioClip[] footstepSound;
     [SerializeField] private float walkStepInterval = 0.5f;
-    [SerializeField] private float sprintStepInterval = 0.5f;
+    [SerializeField] private float sprintStepInterval = 0.3f;
     [SerializeField] private float velocityTreshold = 2.0f;
 
 
     private bool isMoving;
+    private int lastPlayIndex = -1;
     private float nextSteepTime;
     private float verticalRotation;
     private Vector3 currentMovement = Vector3.zero;
@@ -106,11 +107,34 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleFootsteps()
     {
-        float currentStepInterval = (Input.GetKey(sprintKey) ? sprintStepInterval : walkSpeed);
+        float currentStepInterval = (Input.GetKey(sprintKey) ? sprintStepInterval : walkStepInterval);
 
         if(characterController.isGrounded && isMoving && Time.time > nextSteepTime && characterController.velocity.magnitude > velocityTreshold)
         {
+            PlayFoostepSounds();
             nextSteepTime = Time.time + currentStepInterval;
         }
+    }
+
+    void PlayFoostepSounds()
+    {
+        int randomIndex;
+
+        if (footstepSound.Length == 1)
+        {
+            randomIndex = 0;
+        }
+        else
+        {
+            randomIndex = Random.Range(0, footstepSound.Length -1);
+            if (randomIndex >= lastPlayIndex)
+            {
+                randomIndex++;
+            }
+        }
+
+        lastPlayIndex = randomIndex;
+        footstepSource.clip = footstepSound[randomIndex];
+        footstepSource.Play();
     }
 }
