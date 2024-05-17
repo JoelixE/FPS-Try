@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -15,17 +16,11 @@ public class FirstPersonController : MonoBehaviour
     [Header("Look Sensitivity")]
     [SerializeField] private float mouseSensitivity = 2.0f;
     [SerializeField] private float upDownRange = 80.0f;
-
-    [Header("Inputs Customisation")]
-    [SerializeField] private string horizontalMoveInput = "Horizontal";
-    [SerializeField] private string verticalMoveInput = "Vertical";
-    [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [Space]
-    [SerializeField] private string MouseXInput = "Mouse X";
-    [SerializeField] private string MouseYInput = "Mouse Y";
     [SerializeField] private Camera mainCamera;
-    [Space]
-    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+
+    [Header("Inputs Actions")]
+    [SerializeField] private InputActionAsset PlayerControls;
 
     [Header("Footstep Sounds")]
     [SerializeField] private AudioSource footstepSource;
@@ -42,11 +37,45 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 currentMovement = Vector3.zero;
     private CharacterController characterController;
 
-    private void Start()
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private InputAction jumpAction;
+    private InputAction sprintAction;
+    private Vector2 moveInput;
+    private Vector2 lookInput;
+
+    private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        moveAction = PlayerControls.FindActionMap("Movement").FindAction("Move");
+        lookAction = PlayerControls.FindActionMap("Movement").FindAction("Look");
+        jumpAction = PlayerControls.FindActionMap("Movement").FindAction("Jump");
+        sprintAction = PlayerControls.FindActionMap("Movement").FindAction("Sprint");
+
+        moveAction.performed += context => moveInput = context.ReadValue<Vector2>();
+        moveAction.canceled += context => moveInput = Vector2.zero;
+
+        lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
+        lookAction.canceled += context => lookInput = Vector2.zero;
+    }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+        lookAction.Enable();
+        jumpAction.Enable();
+        sprintAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+        lookAction.Disable();
+        jumpAction.Disable();
+        sprintAction.Disable();
     }
 
     private void Update()
@@ -58,12 +87,10 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleMovement()
     {
-        float verticalInput = Input.GetAxis(verticalMoveInput);
-        float horizontalInput = Input.GetAxis(horizontalMoveInput);
-        float speedMultiplier = Input.GetKey(sprintKey) ? sprintMultiplier : 1f;
+        float speedMultiplier = sprintAction.ReadValue<float>() > 0 ? sprintMultiplier : 1f;
 
-        float verticalSpeed = Input.GetAxis(verticalMoveInput) * walkSpeed * speedMultiplier;
-        float horizontalSpeed = Input.GetAxis(horizontalMoveInput) * walkSpeed * speedMultiplier;
+        float verticalSpeed = moveInput.y * walkSpeed * speedMultiplier;
+        float horizontalSpeed = moveInput.x * walkSpeed * speedMultiplier;
 
         Vector3 horizontalMovement = new Vector3 (horizontalSpeed, 0, verticalSpeed);
         horizontalMovement = transform.rotation * horizontalMovement;
@@ -75,7 +102,7 @@ public class FirstPersonController : MonoBehaviour
 
         characterController.Move(currentMovement * Time.deltaTime);
 
-        isMoving = verticalInput != 0 || horizontalInput != 0;
+        isMoving = moveInput.y != 0 || moveInput.x != 0;
     }
 
     void HandleGravityAndJumping()
@@ -84,7 +111,7 @@ public class FirstPersonController : MonoBehaviour
         {
             currentMovement.y = -0.5f;
 
-            if (Input.GetKeyDown(jumpKey))
+            if (jumpAction.triggered)
             {
                 currentMovement.y = jumpForce;
             }
@@ -97,17 +124,17 @@ public class FirstPersonController : MonoBehaviour
 
     void HandleRotation()
     {
-        float mouseXRotation = Input.GetAxis(MouseXInput) * mouseSensitivity;
+        float mouseXRotation = lookInput.x * mouseSensitivity;
         transform.Rotate(0, mouseXRotation, 0);
 
-        verticalRotation -= Input.GetAxis(MouseYInput) * mouseSensitivity;
+        verticalRotation -= lookInput.y * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
         mainCamera.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
     }
 
     void HandleFootsteps()
     {
-        float currentStepInterval = (Input.GetKey(sprintKey) ? sprintStepInterval : walkStepInterval);
+        float currentStepInterval = (sprintAction.ReadValue<float>() > 0 ? sprintStepInterval : walkStepInterval);
 
         if(characterController.isGrounded && isMoving && Time.time > nextSteepTime && characterController.velocity.magnitude > velocityTreshold)
         {

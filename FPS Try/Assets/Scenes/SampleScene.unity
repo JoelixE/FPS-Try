@@ -2963,13 +2963,8 @@ MonoBehaviour:
   gravity: 9.81
   mouseSensitivity: 3
   upDownRange: 80
-  horizontalMoveInput: Horizontal
-  verticalMoveInput: Vertical
-  sprintKey: 304
-  MouseXInput: Mouse X
-  MouseYInput: Mouse Y
   mainCamera: {fileID: 1172954715}
-  jumpKey: 32
+  PlayerControls: {fileID: -944628639613478452, guid: e0e1ff8d0f3c4f94dab3727c3f4d752b, type: 3}
   footstepSource: {fileID: 9193653512763659612}
   footstepSound:
   - {fileID: 8300000, guid: 1d0d0bbc63d5e024f83ca3fcb71ec4aa, type: 3}
