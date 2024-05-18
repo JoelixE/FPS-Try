@@ -243,12 +243,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172954712}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.058163915, y: -0.015859716, z: -0.0010346993, w: -0.99818057}
-  m_LocalPosition: {x: -0, y: 0.068, z: 0.186}
+  m_LocalRotation: {x: 0.002692791, y: -0.015893307, z: -0.0000678494, w: -0.99987006}
+  m_LocalPosition: {x: -0.03, y: 1.721, z: -0.025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3025004840121649115}
+  m_Father: {fileID: 9193653512763659608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1172954714
 AudioListener:
@@ -1165,7 +1165,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 46081603068412725}
-  - {fileID: 1172954713}
   m_Father: {fileID: 2481667985722928801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3123642828073233846
@@ -2647,6 +2646,7 @@ GameObject:
   - component: {fileID: 9193653512763659610}
   - component: {fileID: 9193653512763659611}
   - component: {fileID: 9193653512763659612}
+  - component: {fileID: 9193653512763659613}
   m_Layer: 0
   m_Name: X Bot
   m_TagString: Untagged
@@ -2830,6 +2830,7 @@ Transform:
   - {fileID: 1833939214960659749}
   - {fileID: 8246201843154785767}
   - {fileID: 3730732994139436492}
+  - {fileID: 1172954713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9193653512763659609
@@ -3068,6 +3069,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &9193653512763659613
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421093055791927266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32c5450d04c94c447837ef91068e7d19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
