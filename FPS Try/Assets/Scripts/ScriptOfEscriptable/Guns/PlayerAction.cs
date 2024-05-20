@@ -20,7 +20,7 @@ public class PlayerAction : MonoBehaviour
 
     private void Update()
     {
-        if (fireAction.triggered && GunSelector.ActiveGun != null)
+        if (Input.GetMouseButton(0) && GunSelector.ActiveGun != null)
         {
             GunSelector.ActiveGun.Shoot();
         }
