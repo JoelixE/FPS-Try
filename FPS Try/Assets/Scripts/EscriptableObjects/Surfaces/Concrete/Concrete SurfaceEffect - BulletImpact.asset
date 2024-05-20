@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f7f60477ba7014993f31a906f2a2fb, type: 3}
   m_Name: Concrete SurfaceEffect - BulletImpact
   m_EditorClassIdentifier: 
-  SpawnObjectEffects: []
-  PlayAudioEffects: []
+  SpawnObjectEffects:
+  - {fileID: 11400000, guid: 0093b80e0822e644fa1a36322fecdaba, type: 2}
+  PlayAudioEffects:
+  - {fileID: 11400000, guid: 1ac39e2854b33b64c8beeab981088208, type: 2}

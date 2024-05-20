@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2008fec3f6e64419f543e730d7c70d, type: 3}
   m_Name: USP
   m_EditorClassIdentifier: 
-  ImpactType: {fileID: 0}
-  Type: 1
-  Name: 
-  ModelPrefab: {fileID: 0}
-  SpawnPoint: {x: 0, y: 0, z: 0}
-  SpawnRotation: {x: 0, y: 0, z: 0}
-  shootConfig: {fileID: 0}
-  trailConfig: {fileID: 0}
+  ImpactType: {fileID: 11400000, guid: 9d8415bb9254a204882d6afd3fa680a8, type: 2}
+  Type: 0
+  Name: USP
+  ModelPrefab: {fileID: 8421575067054947663, guid: 9340235d09c51624f80b0fa18b2ae92c, type: 3}
+  SpawnPoint: {x: 0.169, y: -0.301, z: 0.483}
+  SpawnRotation: {x: 0.308, y: -1.821, z: -0.013}
+  shootConfig: {fileID: 11400000, guid: 732abb9e2f0896f459d68ef03c9457df, type: 2}
+  trailConfig: {fileID: 11400000, guid: 12e9cabe57fdfc743b4dba1339e434b4, type: 2}

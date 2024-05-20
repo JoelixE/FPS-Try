@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5445b0034c25ed43a9bc83eec60b8a5, type: 3}
   m_Name: Concrete SpawnObjectEffect
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 100012, guid: 4124bcd25ead6874eb9c83ebc2b1586b, type: 3}
   Probability: 1
-  RandomizeRotation: 0
+  RandomizeRotation: 1
   RandomizeRotationMultiplier: {x: 0, y: 0, z: 0}

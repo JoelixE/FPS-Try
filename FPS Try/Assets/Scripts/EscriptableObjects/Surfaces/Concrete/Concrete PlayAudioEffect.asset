@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a874a2a36f6e404bb1e1c673f1d262b, type: 3}
   m_Name: Concrete PlayAudioEffect
   m_EditorClassIdentifier: 
-  AudioSourcePrefab: {fileID: 0}
-  AudioClips: []
-  VolumeRange: {x: 0, y: 1}
+  AudioSourcePrefab: {fileID: 2704632829665102063, guid: 225233a997dbab4478e8c71533126efc, type: 3}
+  AudioClips:
+  - {fileID: 8300000, guid: b03ef43e2de6a914cbe2bd701e63a1b3, type: 3}
+  - {fileID: 8300000, guid: 32dbddc7a313bed4dbc376792f8a2e3c, type: 3}
+  VolumeRange: {x: 0.5, y: 0.75}

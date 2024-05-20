@@ -123,6 +123,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &639458822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 639458824}
+  - component: {fileID: 639458823}
+  m_Layer: 0
+  m_Name: SurfaceManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &639458823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639458822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d559594a069d2574b8cb8798a9c55251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Surfaces:
+  - Albedo: {fileID: 2800000, guid: 4fffbabcc11067a4287c1b234ecf6572, type: 3}
+    Surface: {fileID: 11400000, guid: 1a3b3cc0e80e572479575070e3178b67, type: 2}
+  DefaultPoolSizes: 10
+  DefaultSurface: {fileID: 11400000, guid: 1a3b3cc0e80e572479575070e3178b67, type: 2}
+--- !u!4 &639458824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639458822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +266,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &863958842
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.96310425
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.348
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210177348693841256, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573296937338447210, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_Preset_A_Rifle_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9d6b85638029004fa5ea6887387ee9c, type: 3}
 --- !u!1 &1172954712
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +476,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d1c64f1829d66f54cadd5e1516d9807e, type: 2}
+  - {fileID: 2100000, guid: 8707a4a515c51274ab1a8af231bc8252, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2647,6 +2753,8 @@ GameObject:
   - component: {fileID: 9193653512763659611}
   - component: {fileID: 9193653512763659612}
   - component: {fileID: 9193653512763659613}
+  - component: {fileID: 9193653512763659615}
+  - component: {fileID: 9193653512763659614}
   m_Layer: 0
   m_Name: X Bot
   m_TagString: Untagged
@@ -3090,6 +3198,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9193653512763659614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421093055791927266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8e8c21d1f01b5418e7dc8949930a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerControls: {fileID: -944628639613478452, guid: e0e1ff8d0f3c4f94dab3727c3f4d752b, type: 3}
+  GunSelector: {fileID: 9193653512763659615}
+--- !u!114 &9193653512763659615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421093055791927266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deee570fb76f96c418aa3eeeb5d9937e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gun: 2
+  GunParent: {fileID: 1882643781017307950}
+  Guns:
+  - {fileID: 11400000, guid: cd6d910e8c4f2e74e85d07eb9177dafc, type: 2}
+  - {fileID: 11400000, guid: baa1872d36fe83d4c9ebdb33cfb3a507, type: 2}
+  ActiveGun: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3097,3 +3237,5 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1624612310}
   - {fileID: 9193653512763659608}
+  - {fileID: 639458824}
+  - {fileID: 863958842}
