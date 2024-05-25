@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,7 @@ public class GunScriptableObject : ScriptableObject
 {
     public ImpactType ImpactType;
     public GunType Type;
-    public string Name;
+    public String Name;
     public GameObject ModelPrefab;
     public Vector3 SpawnPoint;
     public Vector3 SpawnRotation;
